@@ -1,8 +1,10 @@
-
+using Random
 using StringDistances
-srand(2)
-x = map(Base.randstring, rand(5:25,500_000))
-y = map(Base.randstring, rand(5:25,500_000))
+
+Random.seed!(2)
+x = map(randstring, rand(5:25,500_000))
+y = map(randstring, rand(5:25,500_000))
+
 function f(t, x, y)
     [evaluate(t, x[i], y[i]) for i in 1:length(x)]
 end
